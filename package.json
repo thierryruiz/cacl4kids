@@ -1,8 +1,7 @@
 {
   "name": "calctrainer",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": true,
-  "description": "Vue JS app to train kids on addition and substractions",
   "dependencies": {
     "vue": "^2.6.10"
   }
