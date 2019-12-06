@@ -87,7 +87,7 @@ export const App = {
       let self = this;
       setTimeout(function(){
         self.showGiphy = false;
-      }, 2500);
+      }, 2000);
     }
   },
   template: `
