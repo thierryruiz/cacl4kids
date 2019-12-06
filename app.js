@@ -11,7 +11,7 @@ import { EVIL_DATA_URI }  from './emojis/evil' ;
 
 const blank = "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" ;
 const _money_inc = 0.1; // reward step
-const _timer = 16000 ; // time between 2 questions
+const _timer = 20000 ; // time between 2 questions
 
 
 export const App = {
@@ -87,7 +87,7 @@ export const App = {
       let self = this;
       setTimeout(function(){
         self.showGiphy = false;
-      }, 2000);
+      }, 4000);
     }
   },
   template: `
