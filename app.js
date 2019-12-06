@@ -10,8 +10,8 @@ import { SMILE_DATA_URI }  from './emojis/smile' ;
 import { EVIL_DATA_URI }  from './emojis/evil' ;
 
 const blank = "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" ;
-const _money_inc = 1;
-const _timer = 10000 ;
+const _money_inc = 0.1; // reward step
+const _timer = 12000 ; // time between 2 questions
 
 
 export const App = {
