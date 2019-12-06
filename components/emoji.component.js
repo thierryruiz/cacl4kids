@@ -11,5 +11,6 @@ export const Emoji = {
   },
   template: `
      <img width="64" height="64" alt="star" :src="uri" :class="styleClass" />
+     
   `
 };

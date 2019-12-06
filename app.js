@@ -4,6 +4,7 @@
 import { DigitButton } from './components/digit-button.component';
 import { Emoji } from './components/emoji.component';
 import { Score } from './components/score.component';
+import { Giphy } from './components/giphy.component';
 import { Utils } from './services/utils.js';
 import { SMILE_DATA_URI }  from './emojis/smile' ;
 import { EVIL_DATA_URI }  from './emojis/evil' ;
@@ -17,7 +18,7 @@ export const App = {
   created: function () {
     this.newQuestion();
   },
-  components: { DigitButton, Emoji, Score  },
+  components: { DigitButton, Emoji, Score, Giphy },
   data: function () {
     return {
       question: {},
@@ -76,6 +77,7 @@ export const App = {
   },
   template: `
     <div class="container">
+      <Giphy v-if="true" />
       <div class="calc">
         <span class="q">{{question.calc}}</span> = <span class="r">{{result}}</span></div>
       <div class="emoji"><Emoji :uri="emoji" :styleClass="emojiClass" /></div>
