@@ -10,7 +10,7 @@ import { SMILE_DATA_URI }  from './emojis/smile' ;
 import { EVIL_DATA_URI }  from './emojis/evil' ;
 
 const blank = "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" ;
-const _money_inc = 0.1;
+const _money_inc = 1;
 const _timer = 10000 ;
 
 
@@ -60,8 +60,15 @@ export const App = {
       
       if(v === this.question.result){
         this.score += _money_inc;
-        this.emoji = SMILE_DATA_URI ; 
+        this.emoji = SMILE_DATA_URI ;
+
+        let coinsBk = this.coins ;
         this.coins = Math.floor(this.score) ;
+        
+        if (this.coins - coinsBk){
+          this.yeahh() ; 
+        }
+
         this.emojiClass = '';
         console.log(this.coins);
       } else {
@@ -71,13 +78,21 @@ export const App = {
 
       setTimeout(function(){
         self.newQuestion();
-      },2000);
+      },2000) ;
     
+    },
+
+    yeahh : function(){
+      this.showGiphy = true;
+      let self = this;
+      setTimeout(function(){
+        self.showGiphy = false;
+      }, 2500);
     }
   },
   template: `
     <div class="container">
-      <Giphy v-if="true" />
+      <Giphy v-if="showGiphy"/>
       <div class="calc">
         <span class="q">{{question.calc}}</span> = <span class="r">{{result}}</span></div>
       <div class="emoji"><Emoji :uri="emoji" :styleClass="emojiClass" /></div>
