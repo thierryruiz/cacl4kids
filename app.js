@@ -12,7 +12,7 @@ import { EVIL_DATA_URI }  from './emojis/evil' ;
 const blank = "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" ;
 const _money_inc = 1; // reward step
 const _questionDuration = 20000 ; // time between 2 questions
-const _giphyDuration = 3000 ; // time between 2 questions
+const _giphyDuration = 2500 ; // time between 2 questions
 
 const levels =  [{
     min : 1,
