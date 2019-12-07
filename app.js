@@ -10,13 +10,42 @@ import { SMILE_DATA_URI }  from './emojis/smile' ;
 import { EVIL_DATA_URI }  from './emojis/evil' ;
 
 const blank = "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" ;
-const _money_inc = 0.1; // reward step
-const _questionDuration = 20000000 ; // time between 2 questions
-const _giphyDuration = 2000 ; // time between 2 questions
+const _money_inc = 1; // reward step
+const _questionDuration = 20000 ; // time between 2 questions
+const _giphyDuration = 3000 ; // time between 2 questions
+
+const levels =  [{
+    min : 1,
+    max : 10,
+    duration : 20000,
+  },
+  {
+    min : 5,
+    max : 10,
+    duration : 15000,
+  },
+    {
+    min : 5,
+    max : 15,
+    duration : 15000,
+  },
+  {
+    min : 5,
+    max : 15,
+    duration : 15000,
+  },
+
+
+];
+
+const level = 3; // 1,2,3 
+
 
 
 export const App = {
   created: function () {
+    this.level = levels[level-1] ;
+    this.max  = 2*this.level.max; 
     this.newQuestion();
   },
   components: { DigitButton, Emoji, Score, Giphy },
@@ -40,13 +69,13 @@ export const App = {
       }
 
       this.result = '' ;
-      this.question = Utils.randomCalc() ;
+      this.question = Utils.randomCalc(this.level.min, this.level.max) ;
       this.emoji= blank;
-      if(_questionDuration){
+      if(this.level.duration){
         let self = this ;
         this.timer = setTimeout(function(){
           self.newQuestion();
-        },_questionDuration);
+        },this.level.duration);
       }
     },
     
@@ -107,7 +136,7 @@ export const App = {
         <DigitButton :number="0" @click="answer" />
       </div>
       <div class="pad">
-        <DigitButton v-for="n in 20" :number="n" @click="answer" />
+        <DigitButton v-for="n in max" :number="n" @click="answer" />
       </div>
       <div class="score">
         <Score v-if="coins" :value='coins' />
