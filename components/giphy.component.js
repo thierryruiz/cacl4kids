@@ -19,7 +19,8 @@ const gifs = [
   'https://media.giphy.com/media/33OrjzUFwkwEg/giphy.gif',
   'https://media.giphy.com/media/SRO0ZwmImic0/giphy.gif',
   'https://media.giphy.com/media/LxSFsOTa3ytEY/giphy.gif',
-  'https://media.giphy.com/media/TIixDzgRPpK1JmghP2/giphy.gif'
+  'https://media.giphy.com/media/TIixDzgRPpK1JmghP2/giphy.gif',
+  'https://media.giphy.com/media/fxpPSvdGnxfR6/giphy.gif'
 ];
 
 
