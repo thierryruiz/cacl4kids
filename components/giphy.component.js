@@ -9,6 +9,15 @@ const gifs = [
   'https://media.giphy.com/media/26lAQD2af1x5YTnHwn/giphy.gif',
   'https://media.giphy.com/media/dYZuqJLDVsWMLWyIxJ/giphy.gif',
   'https://media.giphy.com/media/MDokQN37RV1S0/giphy.gif',
+  'https://media.giphy.com/media/JE6xHkcUPtYs0/giphy.gif',
+  'https://media.giphy.com/media/tyxovVLbfZdok/giphy.gif',
+  'https://media.giphy.com/media/nc1GZ3BQtghoAlDEEQ/giphy.gif',
+  'https://media.giphy.com/media/6fScAIQR0P0xW/giphy.gif',
+  'https://media.giphy.com/media/RX7N03MEUafW8/giphy.gif',
+  'https://media.giphy.com/media/MLZYKauKxeqKk/giphy.gif',
+  'https://media.giphy.com/media/nNxT5qXR02FOM/giphy.gif',
+  'https://media.giphy.com/media/33OrjzUFwkwEg/giphy.gif',
+ 
 ];
 
 

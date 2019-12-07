@@ -11,7 +11,8 @@ import { EVIL_DATA_URI }  from './emojis/evil' ;
 
 const blank = "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" ;
 const _money_inc = 0.1; // reward step
-const _timer = 20000 ; // time between 2 questions
+const _questionDuration = 20000 ; // time between 2 questions
+const _giphyDuration = 2000 ; // time between 2 questions
 
 
 export const App = {
@@ -41,11 +42,11 @@ export const App = {
       this.result = '' ;
       this.question = Utils.randomCalc() ;
       this.emoji= blank;
-      if(_timer){
+      if(_questionDuration){
         let self = this ;
         this.timer = setTimeout(function(){
           self.newQuestion();
-        },_timer);
+        },_questionDuration);
       }
     },
     
@@ -64,16 +65,22 @@ export const App = {
 
         let coinsBk = this.coins ;
         this.coins = Math.floor(this.score) ;
+                
+        this.emojiClass = '';
         
         if (this.coins - coinsBk){
-          this.yeahh() ; 
+          this.yeahh() ;
         }
 
-        this.emojiClass = '';
-        console.log(this.coins);
+
       } else {
         this.emoji = EVIL_DATA_URI ;
         this.emojiClass = 'blink_me';
+        this.score -= _money_inc;
+
+        if(this.score < 0 ){
+          this.score = 0 ;
+        }
       }
 
       setTimeout(function(){
@@ -87,7 +94,7 @@ export const App = {
       let self = this;
       setTimeout(function(){
         self.showGiphy = false;
-      }, 4000);
+      }, _giphyDuration);
     }
   },
   template: `
