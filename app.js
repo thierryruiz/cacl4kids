@@ -27,7 +27,7 @@ const levels =  [{
     {
     min : 5,
     max : 15,
-    duration : 15000,
+    duration : 20000,
   },
   {
     min : 5,
@@ -38,7 +38,7 @@ const levels =  [{
 
 ];
 
-const level = 3; // 1,2,3 
+const level = 2; // 1,2,3 
 
 
 
